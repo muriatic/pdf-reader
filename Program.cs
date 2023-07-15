@@ -1,6 +1,8 @@
 ﻿using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf.Canvas.Parser.Listener;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 
 namespace PdfRead
@@ -26,6 +28,14 @@ namespace PdfRead
             }
 
             return processed.ToString();
+        }
+        static void TcpConnect(Int32 port, string message)
+        {
+            using TcpClient client = new TcpClient(("127.0.0.1"), port);
+
+            // IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse);
+
+
         }
         static void Main (string[] args)
         {
