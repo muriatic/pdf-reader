@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "pdf-reader": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\comur\\Documents\\GitHub\\pdf-reader\\resume.pdf\""
+    }
+  }
+}
