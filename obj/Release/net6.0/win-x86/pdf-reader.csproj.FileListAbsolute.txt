@@ -241,7 +241,6 @@ C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\win-x86\dbgshim.dl
 C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\win-x86\hostfxr.dll
 C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\win-x86\hostpolicy.dll
 C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\win-x86\mscordaccore.dll
-C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\win-x86\mscordaccore_x86_x86_6.0.1623.17311.dll
 C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\win-x86\mscordbi.dll
 C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\win-x86\mscorrc.dll
 C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\win-x86\msquic.dll
@@ -257,3 +256,4 @@ C:\Users\comur\Documents\GitHub\pdf-reader\obj\Release\net6.0\win-x86\refint\pdf
 C:\Users\comur\Documents\GitHub\pdf-reader\obj\Release\net6.0\win-x86\pdf-reader.pdb
 C:\Users\comur\Documents\GitHub\pdf-reader\obj\Release\net6.0\win-x86\pdf-reader.genruntimeconfig.cache
 C:\Users\comur\Documents\GitHub\pdf-reader\obj\Release\net6.0\win-x86\ref\pdf-reader.dll
+C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\win-x86\mscordaccore_x86_x86_6.0.2023.32017.dll
