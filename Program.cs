@@ -151,39 +151,11 @@ namespace PdfRead
             // nested arrays that will contain UIDs and resume info like this: [[UID1, resume info], [UID2, resume_info]]
             string[][][] identified_PDF_info = new string[subprocesses][][];
             Parallel.For(0, subprocesses, i =>
-            {/*
-                Console.WriteLine("[{0}]", string.Join(", ", chunked_IDs[i]));
-                Console.WriteLine("[{0}]", string.Join(", ", chunked_PDF_names[i]));*/
+            {
                 identified_PDF_info[i] = NewThread(chunked_IDs[i], chunked_PDF_names[i]);
             });
 
             OrderByUID(identified_PDF_info, IDs);
-
-
-
-            /*StringBuilder nested_array_to_string = new StringBuilder();
-
-            // i level is between threads
-            for (int i = 0; i < identified_PDF_info.Length; i++)
-            {
-                // j level is between each person [UID, PDF Info]
-                for (int j = 0; j < identified_PDF_info[i].Length; j++)
-                {
-                Console.WriteLine("[{0}]", string.Join(", ", identified_PDF_info[i][j]));
-                    for (int k = 0; k < identified_PDF_info[i][j].Length; k++)
-                    {
-                        // Console.WriteLine(identified_PDF_info[i][j][k]);
-                    }
-                }
-            }*/
-            /* rationale
-             *  create 
-             *  
-             *  
-             *  
-             * order the resume info's by IDs
-             * print string of parsed resumes ex: [resume_info ... , resume_info2 ...] 
-             */
         }
         public static string[] ParseString(string delimited_str)
         {
@@ -265,20 +237,5 @@ namespace PdfRead
 
             Reader(DIRECTORY, ParseString(IDs), ParseString(PDFs), threads);
         }
-        /*static void Main (string[] args)
-        {
-            // convertHTMLtoPDF(output, input);
-            int totalCount = args.Length;
-
-            if (totalCount != 1)
-            {
-                throw new ArgumentException(
-                    "An unacceptable amount of arguments [" + totalCount + "] was provided, this program requires one arg, {pdf file}");
-            }
-
-            string writeTostdOut = ReadPdf(args[0]);
-
-            Console.WriteLine(writeTostdOut);
-        }*/
     }
 }
