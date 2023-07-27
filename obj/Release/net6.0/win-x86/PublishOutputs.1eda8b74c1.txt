@@ -1,2 +1,0 @@
-C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\publish\win-x86\pdf-reader.pdb
-C:\Users\comur\Documents\GitHub\pdf-reader\bin\Release\net6.0\publish\win-x86\pdf-reader.exe

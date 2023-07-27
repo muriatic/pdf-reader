@@ -2,7 +2,7 @@
   "profiles": {
     "pdf-reader": {
       "commandName": "Project",
-      "commandLineArgs": "\"C:\\Users\\comur\\Documents\\GitHub\\pdf-reader\\resume.pdf\""
+      "commandLineArgs": "-dir \"C:\\Users\\comur\\Documents\\GitHub\\red-book\\CSVs\\Attach Current Resume (File responses)\" -id \"Abram Allison;Alberto Allison;Aldo Patterson;Aleena Cain\" -pdfs \"resume - Abram Allison.pdf;resume - Alberto Allison.pdf;resume - Aldo Patterson.pdf;resume - Aleena Cain.pdf\""
     }
   }
 }
