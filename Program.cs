@@ -1,14 +1,10 @@
 ﻿using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf.Canvas.Parser.Listener;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
 using System.CommandLine;
 using System.CommandLine.Builder;
 using System.CommandLine.Parsing;
-using System.ComponentModel;
-using iText.StyledXmlParser.Node;
+using System.Text;
 
 namespace PdfRead
 {
@@ -92,57 +88,21 @@ namespace PdfRead
         }
         static void OrderByUID (string[][][] identified_PDF_info, int[] IDs)
         {
+            string[] PDFInfo1dArray = new string[IDs.Length];
             for (int x = 0; x < identified_PDF_info.Length; x++)
             {
-                foreach(var item in identified_PDF_info[x]) {
-                    if (item == null)
-                    {
-                        Console.WriteLine("Null");
-                    }
-                    else
-                    {
-                        Console.WriteLine(item.GetType());
-                    }
-                }
-                /*Array.ForEach(identified_PDF_info[x], Console.WriteLine);*/
-            }
-            /*foreach(var item in identified_PDF_info)
-            {
-
-            }*/
-            /*Console.WriteLine(identified_PDF_info.Length);
-            for (int x = 0; x < identified_PDF_info.Length; x++)
-            {
-                Console.WriteLine("[{0}]", string.Join(", ", identified_PDF_info[x]));
-
-                *//*for (int y = 0; y < identified_PDF_info[x].Length; y++)
+                for (int y = 0; y < identified_PDF_info[x].Length; y++)
                 {
-                    Console.WriteLine(identified_PDF_info[x][y]);
-                }*//*
-            }*/
-
-            // first we need to unnest the nested array
-            /*string[][] Depth1NestedArray = new string[IDs.Length][];
-
-            for (int i = 0; i < identified_PDF_info.Length; i++)
-            {
-                for (int j = 0; j < identified_PDF_info[i].Length; j++)
-                {
-                    Depth1NestedArray[i] = identified_PDF_info[i][j];
+                    int idx = Convert.ToUInt16(identified_PDF_info[x][y][0]);
+                    PDFInfo1dArray[idx] = identified_PDF_info[x][y][1];
                 }
             }
 
-            for (int x = 0; x < Depth1NestedArray.Length; x++)
-            {
-                for (int y = 0; y < Depth1NestedArray[x].Length; y++)
-                {
-                    Console.WriteLine(Depth1NestedArray[x][y]);
-                }
-            }*/
+            // formatted like ["resume", ... , "resume"]
+            string PDFInfoString = "[\"" + (string.Join("\", \"", PDFInfo1dArray)) + "\"]";
 
-            //StringBuilder NestedArrayToString = new StringBuilder();
-
-            
+            // Write to Console (picked up by Python)
+            Console.WriteLine(PDFInfoString);
         }
         static void Reader(string DIRECTORY, string[] UIDs, string[] PDFs, int threads)
         {
@@ -185,11 +145,6 @@ namespace PdfRead
                 chunked_PDF_names[i] = combined_PDF_paths;
                 chunked_IDs[i] = IDs[last_idx..(chunks[i] + last_idx)];
 
-                //! set for removal
-                /*foreach(string pth in combined_PDF_paths) {
-                    Console.WriteLine(pth);
-                }*/
-
                 last_idx = chunks[i];
             }
 
@@ -204,21 +159,6 @@ namespace PdfRead
 
             OrderByUID(identified_PDF_info, IDs);
 
-
-            /*Console.WriteLine(identified_PDF_info.Length);
-            for (int x = 0; x < identified_PDF_info.Length; x++)
-            {
-                for (int y = 0; y < identified_PDF_info[x].Length; y++)
-                {
-                    Console.WriteLine("[{0}]", string.Join(", ", identified_PDF_info[x][y]));
-
-                }
-
-                *//*for (int y = 0; y < identified_PDF_info[x].Length; y++)
-                {
-                    Console.WriteLine(identified_PDF_info[x][y]);
-                }*//*
-            }*/
 
 
             /*StringBuilder nested_array_to_string = new StringBuilder();
