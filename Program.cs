@@ -99,7 +99,8 @@ namespace PdfRead
             }
 
             // formatted like ["resume", ... , "resume"]
-            string PDFInfoString = "[\"" + (string.Join("\", \"", PDFInfo1dArray)) + "\"]";
+            // we'll split each PDF info with my own character (shouldn't be found in PDFs)
+            string PDFInfoString = string.Join("", PDFInfo1dArray);
 
             // Write to Console (picked up by Python)
             Console.WriteLine(PDFInfoString);
